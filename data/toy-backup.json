@@ -1,0 +1,90 @@
+[
+    {
+      "_id": "614ef02f70d24311e584f162",
+      "name": "Buzz Lightyear",
+      "price": 123,
+      "labels": ["Doll", "Battery Powered"],
+      "createdAt": 1631031801011,
+      "inStock": true
+    },
+    {
+      "_id": "614ef02f70d24311e584f163",
+      "name": "Talking Teddy Bear",
+      "price": 89,
+      "labels": ["Baby", "Doll"],
+      "createdAt": 1631125645863,
+      "inStock": true
+    },
+    {
+      "_id": "614ef02f70d24311e584f164",
+      "name": "Musical Train Set",
+      "price": 299,
+      "labels": ["On wheels", "Battery Powered", "Outdoor"],
+      "createdAt": 1631099274372,
+      "inStock": false
+    },
+    {
+      "_id": "614ef02f70d24311e584f165",
+      "name": "Colorful Puzzle Blocks",
+      "price": 45,
+      "labels": ["Puzzle", "Art"],
+      "createdAt": 1631107412719,
+      "inStock": true
+    },
+    {
+      "_id": "614ef02f70d24311e584f166",
+      "name": "Giggling Giraffe",
+      "price": 64,
+      "labels": ["Baby", "Outdoor"],
+      "createdAt": 1631122838598,
+      "inStock": true
+    },
+    {
+      "_id": "614ef02f70d24311e584f167",
+      "name": "Magic Drawing Board",
+      "price": 149,
+      "labels": ["Art", "Baby", "Outdoor"],
+      "createdAt": 1631136809867,
+      "inStock": false
+    },
+    {
+      "_id": "614ef02f70d24311e584f168",
+      "name": "RC Race Car",
+      "price": 79,
+      "labels": ["On wheels", "Battery Powered"],
+      "createdAt": 1631102115584,
+      "inStock": true
+    },
+    {
+      "_id": "614ef02f70d24311e584f169",
+      "name": "Stacking Rings",
+      "price": 19,
+      "labels": ["Baby"],
+      "createdAt": 1631129276751,
+      "inStock": false
+    },
+    {
+      "_id": "614ef02f70d24311e584f16a",
+      "name": "Interactive Learning Tablet",
+      "price": 129,
+      "labels": ["Baby", "Battery Powered", "Puzzle"],
+      "createdAt": 1631115098246,
+      "inStock": true
+    },
+    {
+      "_id": "614ef02f70d24311e584f16b",
+      "name": "Wooden Building Blocks",
+      "price": 59,
+      "labels": ["Puzzle"],
+      "createdAt": 1631132139382,
+      "inStock": true
+    },
+    {
+      "_id": "614ef02f70d24311e584f16c",
+      "name": "Outdoor Sports Set",
+      "price": 199,
+      "labels": ["Outdoor"],
+      "createdAt": 1631096917645,
+      "inStock": false
+    }
+  ]
