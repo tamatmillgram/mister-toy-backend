@@ -6,19 +6,28 @@ const cookieParser = require('cookie-parser')
 const path = require('path')
 const cors = require('cors')
 
+if (process.env.NODE_ENV === 'production') {
+} else {
+app.use(express.static(path.resolve(__dirname,'public')))
+ const corsOptions = {
+origin: ['http://127.0.0.1:3000', 'http://localhost:3000'],
+credentials: true
+}
+   app.use(cors(corsOptions))
+}
 
 // App Configuration
-const corsOptions = {
-    origin: [
-        'http://127.0.0.1:8080',
-        'http://localhost:8080',
-        'http://127.0.0.1:3000',
-        'http://localhost:3000'
-    ],
-    credentials: true
-}
-app.use(cors(corsOptions))
-app.use(express.static('public'))
+// const corsOptions = {
+//     origin: [
+//         'http://127.0.0.1:8080',
+//         'http://localhost:8080',
+//         'http://127.0.0.1:3000',
+//         'http://localhost:3000'
+//     ],
+//     credentials: true
+// }
+// app.use(cors(corsOptions))
+// app.use(express.static('public'))
 app.use(cookieParser()) // for res.cookies
 app.use(express.json()) // for req.body
 
@@ -156,10 +165,11 @@ app.delete('/api/toy/:toyId', (req, res) => {
 // })
 
 
+const port = process.env.PORT || 3030
 app.get('/**', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'))
+res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 
-
-// Listen will always be the last line in our server!
-app.listen(3030, () => console.log('Server listening on port 3030!'))
+app.listen(port, () => {
+console.log(`App listening on port ${port}!`)
+})
