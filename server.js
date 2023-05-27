@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser')
 const path = require('path')
 const cors = require('cors')
 
+const PIXELS_API = 'V4Q5ywIXUcmr4WrPtaYPURVzw1QzzSfjHJ9bFdDF9BBaCddb5tTkNQI1'
+
 if (process.env.NODE_ENV === 'production') {
 } else {
 app.use(express.static(path.resolve(__dirname,'public')))
@@ -36,9 +38,11 @@ app.use(express.json()) // for req.body
 // **************** Toys API ****************:
 // List
 app.get('/api/toy', (req, res) => {
-    const { name, labels, inStock } = req.query
-    const filterBy = { name, labels, inStock }
-    toyService.query(filterBy)
+    // const { name, labels, inStock, price, createdAt } = req.query
+    // const filterBy = { name, labels, inStock }
+    // const sortBy = {price, createdAt, name}
+    const { filterBy, sortBy } = req.query
+    toyService.query(filterBy, sortBy )
         .then(toys => {
             res.send(toys)
         })

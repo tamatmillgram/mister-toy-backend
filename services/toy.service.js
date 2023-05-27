@@ -1,7 +1,11 @@
 const fs = require('fs')
 var toys = require('../data/toy.json')
+const { log } = require('console')
 
-function query(filterBy = {}) {
+let pages
+const PAGE_SIZE = 5
+
+function query(filterBy = {}, sortBy) {
     let toysToDisplay = toys
     if (filterBy.name) {
         const regExp = new RegExp(filterBy.name, 'i')
@@ -15,14 +19,23 @@ function query(filterBy = {}) {
             return filterBy.labels.every((label) => toy.labels.includes(label))
         })
     }
-
-    return Promise.resolve(toysToDisplay)
+    if (sortBy) _getSortedToys(toysToDisplay, sortBy)
+    if (filterBy.pageIdx !== undefined)  {
+        console.log('hi')
+        pages = Math.ceil(toysToDisplay.length / PAGE_SIZE)
+       if (filterBy.pageIdx + 1 < pages || filterBy.pageIdx > 0) {
+           const startIdx = filterBy.pageIdx * PAGE_SIZE
+           toysToDisplay = toysToDisplay.slice(startIdx, startIdx + PAGE_SIZE)
+       }
+    }
+    return Promise.resolve({toysToDisplay, pages})
 }
 
 function get(toyId) {
     const toy = toys.find(toy => toy._id === toyId)
     if (!toy) return Promise.reject('Toy not found!')
-    return Promise.resolve({toy, msgs: ['Hello!','I would like to complain', 'My name is Keren']})
+    return Promise.resolve(toy)
+    // return Promise.resolve({toy, msgs: ['Hello!','I would like to complain', 'My name is Keren']})
 }
 
 function remove(toyId, loggedinUser) {
@@ -75,6 +88,17 @@ function _saveToysToFile() {
             resolve()
         });
     })
+}
+
+function _getSortedToys(toysToDisplay, sortBy) {
+    console.log('entered sorting')
+    toysToDisplay.sort(
+        (t1, t2) => {
+            const value1 = t1[sortBy.type]
+            const value2 = t2[sortBy.type]
+            return sortBy.desc * (typeof value1 === 'string' && typeof value2 === 'string' ? value2.localeCompare(value1) : value2 - value1)
+        }
+    )
 }
 
 module.exports = {

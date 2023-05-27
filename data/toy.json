@@ -2,10 +2,10 @@
   {
     "_id": "614ef02f70d24311e584f162",
     "name": "Buzz Lightyear",
-    "price": 150,
+    "price": 154,
     "labels": [
-      "Doll",
-      "Battery Powered"
+      "Battery Powered",
+      "Box game"
     ],
     "createdAt": 1631031801011,
     "inStock": "true"
@@ -13,7 +13,7 @@
   {
     "_id": "614ef02f70d24311e584f163",
     "name": "Talking Teddy Bear",
-    "price": 89,
+    "price": 91,
     "labels": [
       "Baby",
       "Doll"
@@ -25,7 +25,11 @@
     "_id": "614ef02f70d24311e584f164",
     "name": "Musical Train Set",
     "price": 299,
-    "labels": ["On wheels", "Battery Powered", "Outdoor"],
+    "labels": [
+      "On wheels",
+      "Battery Powered",
+      "Outdoor"
+    ],
     "createdAt": 1631099274372,
     "inStock": "false"
   },
@@ -125,5 +129,27 @@
     "inStock": "true",
     "_id": "GtyyS",
     "createdAt": 1684788149157
+  },
+  {
+    "name": "Buzz Lightyear",
+    "price": 123,
+    "labels": [
+      "Doll",
+      "Battery Powered"
+    ],
+    "inStock": true,
+    "_id": "S3xYa",
+    "createdAt": 1684939884652
+  },
+  {
+    "name": "Buzz Lightyear",
+    "price": 123,
+    "labels": [
+      "Doll",
+      "Battery Powered"
+    ],
+    "inStock": true,
+    "_id": "HBm1Y",
+    "createdAt": 1684939886480
   }
 ]
